@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Colour Picker</title>
+    </head>
+    <body>
+        <div style="width: 100%;">
+            <div>
+                <h1>Colour Picker</h1>
+            </div>
+            <div>
+                <div id="colourpickerdiv">&nbsp</div>
+                <input type="color" id="colourpicker">
+            </div>
+            <div>
+                <div> <p>Hex</p> <p id="hextextarea"> </p></div>
+            </div>
+        </div>
+    </body>
+    <script>
+        //watch for events
+        colourpicker.addEventListener("change", watchcolourpicker, false);
+        colourpicker.addEventListener("input", watchcolourpicker, false);
+        
+        //event functions 
+        function watchcolourpicker(event) {
+            document.querySelector("#hextextarea").innerHTML = event.target.value;
+            document.querySelector("#colourpickerdiv").style.background = event.target.value;
+        }
+
+        //function for updating on page load
+        function pageloadcolourpicker() {
+            document.querySelector("#hextextarea").innerHTML = document.querySelector("#colourpicker").value;
+            document.querySelector("#colourpickerdiv").style.background = document.querySelector("#colourpicker").value;
+        }
+        pageloadcolourpicker();
+    </script>
+</html>
