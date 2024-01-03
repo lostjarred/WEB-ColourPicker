@@ -67,20 +67,23 @@
         </div>
     </body>
     <script>
+        //variable setup
+            const hextextbox = document.querySelector("#hextextarea");
+            const colourpickerdiv = document.querySelector("#colourpickerdiv");
         //watch for events
             colourpicker.addEventListener("change", watchcolourpicker, false);
             colourpicker.addEventListener("input", watchcolourpicker, false);
         
         //event functions 
             function watchcolourpicker(event) {
-                document.querySelector("#hextextarea").value = event.target.value;
-                document.querySelector("#colourpickerdiv").style.background = event.target.value;
+                hextextbox.value = event.target.value;
+                colourpickerdiv.style.background = event.target.value;
             }
 
         //function for updating on page load
             function pageloadcolourpicker() {
-                document.querySelector("#hextextarea").value = document.querySelector("#colourpicker").value;
-                document.querySelector("#colourpickerdiv").style.background = document.querySelector("#colourpicker").value;
+                hextextbox.value = document.querySelector("#colourpicker").value;
+                colourpickerdiv.style.background = document.querySelector("#colourpicker").value;
             }
         pageloadcolourpicker();
     </script>
