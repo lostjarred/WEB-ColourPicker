@@ -83,6 +83,10 @@
         //variable setup
             const hextextbox = document.querySelector("#hextextarea");
             const colourpickerdiv = document.querySelector("#colourpickerdiv");
+            
+            const hexrtext = document.querySelector("#hexr");
+            const hexbtext = document.querySelector("#hexb");
+            const hexgtext = document.querySelector("#hexg");
         //watch for events
             colourpicker.addEventListener("change", watchcolourpicker, false);
             colourpicker.addEventListener("input", watchcolourpicker, false);
@@ -102,11 +106,7 @@
             }
         pageloadcolourpicker();
 
-        //functions for converting to rgb
-            const hexrtext = document.querySelector("#hexr");
-            const hexbtext = document.querySelector("#hexb");
-            const hexgtext = document.querySelector("#hexg");
-            
+        //functions for converting to rgb     
             function splithex() {
                 let hex = String(hextextbox.value);
                 
