@@ -18,6 +18,12 @@
                 color: #FFCC00;
                 font-family: UnnamedDOSFontIV;
             }
+            input {
+                color: #FFCC00;
+                font-family: UnnamedDOSFontIV;
+                background-color: rgba(204, 139, 0, 0.5);
+                margin: 5%;
+            }
             h1 {
                 color: #FFB000;
                 font-family: UnnamedDOSFontIV;
@@ -55,7 +61,7 @@
                 </div> 
                 
                 <div class="row">
-                    <p id="hextextarea"></p>
+                    <input type="text" id="hextextarea"> 
                 </div>
             </div>
         </div>
@@ -67,13 +73,13 @@
         
         //event functions 
             function watchcolourpicker(event) {
-                document.querySelector("#hextextarea").innerHTML = event.target.value;
+                document.querySelector("#hextextarea").value = event.target.value;
                 document.querySelector("#colourpickerdiv").style.background = event.target.value;
             }
 
         //function for updating on page load
             function pageloadcolourpicker() {
-                document.querySelector("#hextextarea").innerHTML = document.querySelector("#colourpicker").value;
+                document.querySelector("#hextextarea").value = document.querySelector("#colourpicker").value;
                 document.querySelector("#colourpickerdiv").style.background = document.querySelector("#colourpicker").value;
             }
         pageloadcolourpicker();
