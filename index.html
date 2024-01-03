@@ -103,17 +103,21 @@
         pageloadcolourpicker();
 
         //functions for converting to rgb
+            const hexrtext = document.querySelector("#hexr");
+            const hexbtext = document.querySelector("#hexb");
+            const hexgtext = document.querySelector("#hexg");
+            
             function splithex() {
                 let hex = String(hextextbox.value);
                 
                 let hexred = hex[1] + hex[2];
-                document.querySelector("#hexr").value = hexred;
+                hexrtext.value = hexred;
                 
                 let hexblue = hex[3] + hex[4]
-                document.querySelector("#hexb").value = hexblue;
+                hexbtext.value = hexblue;
 
                 let hexgreen = hex[5] + hex[6]
-                document.querySelector("#hexg").value = hexgreen;
+                hexgtext.value = hexgreen;
             }
     </script>
 </html>
