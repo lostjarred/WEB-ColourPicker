@@ -55,13 +55,26 @@
                     </div>
                 </div>
             </div>
-            <div class="wrapper" style="border-top: 2px dashed #FFB000; border-bottom: 2px dashed #FFB000; padding-left: 1%;">
-                <div class="row">
-                    <p>Hex :&nbsp</p>
-                </div> 
-                
-                <div class="row">
-                    <input type="text" id="hextextarea"> 
+            <div class="wrapper col" style="border-top: 2px dashed #FFB000; border-bottom: 2px dashed #FFB000; padding-left: 1%;">
+                <div class="wrapper">
+                    <div class="row">
+                        <p>Hex :&nbsp</p>
+                    </div> 
+                    
+                    <div class="row">
+                        <input type="text" id="hextextarea"> 
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="row">
+                        <input type="text" id="hexr"> 
+                    </div>
+                    <div class="row">
+                        <input type="text" id="hexb"> 
+                    </div>
+                    <div class="row">
+                        <input type="text" id="hexg"> 
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,13 +91,29 @@
             function watchcolourpicker(event) {
                 hextextbox.value = event.target.value;
                 colourpickerdiv.style.background = event.target.value;
+                splithex()
             }
 
         //function for updating on page load
             function pageloadcolourpicker() {
                 hextextbox.value = document.querySelector("#colourpicker").value;
                 colourpickerdiv.style.background = document.querySelector("#colourpicker").value;
+                splithex()
             }
         pageloadcolourpicker();
+
+        //functions for converting to rgb
+            function splithex() {
+                let hex = String(hextextbox.value);
+                
+                let hexred = hex[1] + hex[2];
+                document.querySelector("#hexr").value = hexred;
+                
+                let hexblue = hex[3] + hex[4]
+                document.querySelector("#hexb").value = hexblue;
+
+                let hexgreen = hex[5] + hex[6]
+                document.querySelector("#hexg").value = hexgreen;
+            }
     </script>
 </html>
