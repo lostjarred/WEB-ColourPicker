@@ -79,7 +79,7 @@
                         <p> <input type="color" id="colourpicker" value="#ffffff"> </p>
                     </div>
                     <div class="row" style="padding-right: 1%; ">
-                        <p> <input id="colourpickertextboc" value="#ffffff" size="7" maxlength="7"> </p>
+                        <p> <input id="colourpickertextbox" value="#ffffff" size="7" maxlength="7"> </p>
                     </div>
                 </div>
             </div>
@@ -137,6 +137,8 @@
         //variable setup
             const hextextbox = document.querySelector("#hextextarea");
             const colourpickerdiv = document.querySelector("#colourpickerdiv");
+            const colourpicker = document.querySelector("#colourpicker");
+            const colourpickertextbox = document.querySelector("#colourpickertextbox");
 
             const hex1text = document.querySelector("#hex1");
             const hex2text = document.querySelector("#hex2");
@@ -146,13 +148,27 @@
             const intbtext = document.querySelector("#intb");
             const intgtext = document.querySelector("#intg");
         //watch for events
+            //colour picker input
             colourpicker.addEventListener("change", watchcolourpicker, false);
             colourpicker.addEventListener("input", watchcolourpicker, false);
-        
-        //event functions 
+            
+            //textbox input
+            colourpickertextbox.addEventListener("change", watchcolourpickertextbox, false);
+            colourpickertextbox.addEventListener("input", watchcolourpickertextbox, false);
+        //event functions
+            //colour picker 
             function watchcolourpicker(event) {
                 hextextbox.value = event.target.value;
                 colourpickerdiv.style.background = event.target.value;
+                colourpickertextbox.value = event.target.value;
+                splithex();
+                convertrgb();
+            }
+            //colour pick textbox
+            function watchcolourpickertextbox(event) {
+                hextextbox.value = event.target.value;
+                colourpickerdiv.style.background = event.target.value;
+                colourpicker.value = event.target.value;
                 splithex();
                 convertrgb();
             }
