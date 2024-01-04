@@ -22,7 +22,6 @@
                 color: #FFCC00;
                 font-family: UnnamedDOSFontIV;
                 background-color: rgba(204, 139, 0, 0.5);
-                margin: 5%;
             }
             h1 {
                 color: #FFB000;
@@ -62,18 +61,38 @@
                     </div> 
                     
                     <div class="row">
-                        <input type="text" id="hextextarea"> 
+                        <input type="text" id="hextextarea" size="7" maxlength="7" readonly> 
                     </div>
                 </div>
                 <div class="wrapper">
                     <div class="row">
-                        <input type="text" id="hexr"> 
+                        <input type="text" id="hexr" size="2" maxlength="2" readonly> 
                     </div>
                     <div class="row">
-                        <input type="text" id="hexb"> 
+                        <input type="text" id="hexb" size="2" maxlength="2" readonly> 
                     </div>
                     <div class="row">
-                        <input type="text" id="hexg"> 
+                        <input type="text" id="hexg" size="2" maxlength="2" readonly> 
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="row">
+                        <p>Red</p>
+                    </div>
+                    <div class="row">
+                        <input type="text" id="intr" size="3" maxlength="3" readonly> 
+                    </div>
+                    <div class="row">
+                        <p>Blue</p>
+                    </div>
+                    <div class="row">
+                        <input type="text" id="intb" size="3" maxlength="3" readonly> 
+                    </div>
+                    <div class="row">
+                        <p>Green</p>
+                    </div>
+                    <div class="row">
+                        <input type="text" id="intg" size="3" maxlength="3" readonly> 
                     </div>
                 </div>
             </div>
@@ -83,10 +102,14 @@
         //variable setup
             const hextextbox = document.querySelector("#hextextarea");
             const colourpickerdiv = document.querySelector("#colourpickerdiv");
-            
+
             const hexrtext = document.querySelector("#hexr");
             const hexbtext = document.querySelector("#hexb");
             const hexgtext = document.querySelector("#hexg");
+
+            const intrtext = document.querySelector("#intr");
+            const intbtext = document.querySelector("#intb");
+            const intgtext = document.querySelector("#intg");
         //watch for events
             colourpicker.addEventListener("change", watchcolourpicker, false);
             colourpicker.addEventListener("input", watchcolourpicker, false);
@@ -95,14 +118,16 @@
             function watchcolourpicker(event) {
                 hextextbox.value = event.target.value;
                 colourpickerdiv.style.background = event.target.value;
-                splithex()
+                splithex();
+                convertrgb();
             }
 
         //function for updating on page load
             function pageloadcolourpicker() {
                 hextextbox.value = document.querySelector("#colourpicker").value;
                 colourpickerdiv.style.background = document.querySelector("#colourpicker").value;
-                splithex()
+                splithex();
+                convertrgb();
             }
         pageloadcolourpicker();
 
@@ -111,13 +136,18 @@
                 let hex = String(hextextbox.value);
                 
                 let hexred = hex[1] + hex[2];
-                hexrtext.value = hexred;
+                hexrtext.value = hexred
                 
                 let hexblue = hex[3] + hex[4]
                 hexbtext.value = hexblue;
 
                 let hexgreen = hex[5] + hex[6]
                 hexgtext.value = hexgreen;
+            }
+            function convertrgb() {
+                intrtext.value = parseInt(hexrtext.value, 16);
+                intbtext.value = parseInt(hexbtext.value, 16);
+                intgtext.value = parseInt(hexgtext.value, 16);
             }
     </script>
 </html>
