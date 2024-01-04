@@ -75,13 +75,13 @@
                 </div>
                 <div class="wrapper">
                     <div class="row">
-                        <input type="text" id="hexr" size="2" maxlength="2" readonly> 
+                        <input type="text" id="hex1" size="2" maxlength="2" readonly> 
                     </div>
                     <div class="row">
-                        <input type="text" id="hexb" size="2" maxlength="2" readonly> 
+                        <input type="text" id="hex2" size="2" maxlength="2" readonly> 
                     </div>
                     <div class="row">
-                        <input type="text" id="hexg" size="2" maxlength="2" readonly> 
+                        <input type="text" id="hex3" size="2" maxlength="2" readonly> 
                     </div>
                 </div>
                 <div class="wrapper">
@@ -115,9 +115,9 @@
             const hextextbox = document.querySelector("#hextextarea");
             const colourpickerdiv = document.querySelector("#colourpickerdiv");
 
-            const hexrtext = document.querySelector("#hexr");
-            const hexbtext = document.querySelector("#hexb");
-            const hexgtext = document.querySelector("#hexg");
+            const hex1text = document.querySelector("#hex1");
+            const hex2text = document.querySelector("#hex2");
+            const hex3text = document.querySelector("#hex3");
 
             const intrtext = document.querySelector("#intr");
             const intbtext = document.querySelector("#intb");
@@ -147,19 +147,19 @@
             function splithex() {
                 let hex = String(hextextbox.value);
                 
-                let hexred = hex[1] + hex[2];
-                hexrtext.value = hexred
+                let hex1 = hex[1] + hex[2];
+                hex1text.value = hex1
                 
-                let hexblue = hex[3] + hex[4]
-                hexbtext.value = hexblue;
+                let hex2 = hex[3] + hex[4]
+                hex2text.value = hex2;
 
-                let hexgreen = hex[5] + hex[6]
-                hexgtext.value = hexgreen;
+                let hex3 = hex[5] + hex[6]
+                hex3text.value = hex3;
             }
             function convertrgb() {
-                intrtext.value = parseInt(hexrtext.value, 16);
-                intbtext.value = parseInt(hexbtext.value, 16);
-                intgtext.value = parseInt(hexgtext.value, 16);
+                intrtext.value = parseInt(hex1text.value, 16);
+                intbtext.value = parseInt(hex3text.value, 16);
+                intgtext.value = parseInt(hex2text.value, 16);
             }
     </script>
 </html>
