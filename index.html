@@ -143,7 +143,8 @@
             }
         pageloadcolourpicker();
 
-        //functions for converting to rgb     
+        //functions for converting to rgb
+            //split hex code into 3     
             function splithex() {
                 let hex = String(hextextbox.value);
                 
@@ -156,6 +157,7 @@
                 let hex3 = hex[5] + hex[6]
                 hex3text.value = hex3;
             }
+            //convert hex to int RGB
             function convertrgb() {
                 intrtext.value = parseInt(hex1text.value, 16);
                 intbtext.value = parseInt(hex3text.value, 16);
