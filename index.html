@@ -124,19 +124,19 @@
                         <p>Red:&nbsp</p>
                     </div>
                     <div class="row">
-                        <p> <input type="text" id="intr" size="3" maxlength="3" readonly> </p>
+                        <p id="intr" class="textbox"></p>
                     </div>
                     <div class="row">
                         <p>Green:&nbsp</p>
                     </div>
                     <div class="row">
-                        <p> <input type="text" id="intg" size="3" maxlength="3" readonly> </p>
+                        <p id="intg" class="textbox"></p>
                     </div>
                     <div class="row">
                         <p>Blue:&nbsp</p>
                     </div>
                     <div class="row">
-                        <p> <input type="text" id="intb" size="3" maxlength="3" readonly> </p>
+                        <p id="intb" class="textbox"></p>
                     </div>
                 </div>
             </div>
@@ -210,9 +210,9 @@
                 hex2text.innerHTML = hex2;
                 hex3text.innerHTML = hex3;
             //rgb
-                intrtext.value = redint;
-                intbtext.value = blueint;
-                intgtext.value = greenint;
+                intrtext.innerHTML = redint;
+                intbtext.innerHTML = blueint;
+                intgtext.innerHTML = greenint;
         }
         pageloadcolourpicker();
 
