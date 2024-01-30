@@ -154,6 +154,10 @@
             const intrtext = document.querySelector("#intr");
             const intbtext = document.querySelector("#intb");
             const intgtext = document.querySelector("#intg");
+        //variables for values
+            let hex1 = 0;
+            let hex2 = 0;
+            let hex3 = 0;
         //watch for events
             //colour picker input
             colourpicker.addEventListener("change", watchcolourpicker, false);
@@ -194,13 +198,13 @@
             function splithex() {
                 let hex = String(hextextbox.value);
                 
-                let hex1 = hex[1] + hex[2];
+                hex1 = hex[1] + hex[2];
                 hex1text.value = hex1
                 
-                let hex2 = hex[3] + hex[4]
+                hex2 = hex[3] + hex[4]
                 hex2text.value = hex2;
 
-                let hex3 = hex[5] + hex[6]
+                hex3 = hex[5] + hex[6]
                 hex3text.value = hex3;
             }
             //convert hex to int RGB
