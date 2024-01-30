@@ -201,9 +201,14 @@
             }
         //function to update textboxes
         function updatetextboxes() {
-            hex1text.value = hex1
-            hex2text.value = hex2;
-            hex3text.value = hex3;
+            //hex
+                hex1text.value = hex1
+                hex2text.value = hex2;
+                hex3text.value = hex3;
+            //rgb
+                intrtext.value = redint;
+                intbtext.value = blueint;
+                intgtext.value = greenint;
         }
         pageloadcolourpicker();
 
@@ -217,9 +222,9 @@
             }
             //convert hex to int RGB
             function convertrgb() {
-                intrtext.value = parseInt(hex1, 16);
-                intbtext.value = parseInt(hex3, 16);
-                intgtext.value = parseInt(hex2, 16);
+                redint = parseInt(hex1, 16);
+                blueint = parseInt(hex3, 16);
+                greenint = parseInt(hex2, 16);
             }
     </script>
 </html>
