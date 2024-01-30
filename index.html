@@ -27,6 +27,7 @@
                 background-color: rgba(204, 139, 0, 0.5);
                 text-align: center;
                 border: 1px solid #FFB000;
+                padding: 2px;
             }
             body {
                 background-color: #282828;
@@ -106,13 +107,13 @@
                 </div>
                 <div class="wrapper">
                     <div class="row">
-                        <p> <input type="text" id="hex1" size="2" maxlength="2" readonly> </p>
+                        <p id="hex1" class="textbox"></p>
                     </div>
                     <div class="row">
-                        <p> <input type="text" id="hex2" size="2" maxlength="2" readonly> </p>
+                        <p id="hex2" class="textbox"></p>
                     </div>
                     <div class="row">
-                        <p> <input type="text" id="hex3" size="2" maxlength="2" readonly> </p>
+                        <p id="hex3" class="textbox"></p>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -157,6 +158,7 @@
             const intgtext = document.querySelector("#intg");
         //variables for values
             //hex
+            let hexc = 0;
             let hex1 = 0;
             let hex2 = 0;
             let hex3 = 0;
@@ -175,7 +177,7 @@
         //event functions
             //colour picker 
             function watchcolourpicker(event) {
-                hextextbox.value = event.target.value;
+                hexc = event.target.value;
                 colourpickerdiv.style.background = event.target.value;
                 colourpickertextbox.value = event.target.value;
                 splithex();
@@ -184,7 +186,7 @@
             }
             //colour pick textbox
             function watchcolourpickertextbox(event) {
-                hextextbox.value = event.target.value;
+                hexc = event.target.value;
                 colourpickerdiv.style.background = event.target.value;
                 colourpicker.value = event.target.value;
                 splithex();
@@ -194,7 +196,7 @@
 
         //function for updating on page load
             function pageloadcolourpicker() {
-                hextextbox.value = document.querySelector("#colourpicker").value;
+                hexc = document.querySelector("#colourpicker").value;
                 colourpickerdiv.style.background = document.querySelector("#colourpicker").value;
                 splithex();
                 convertrgb();
@@ -203,9 +205,10 @@
         //function to update textboxes
         function updatetextboxes() {
             //hex
-                hex1text.value = hex1
-                hex2text.value = hex2;
-                hex3text.value = hex3;
+                hextextbox.value = hexc;
+                hex1text.innerHTML = hex1
+                hex2text.innerHTML = hex2;
+                hex3text.innerHTML = hex3;
             //rgb
                 intrtext.value = redint;
                 intbtext.value = blueint;
@@ -216,7 +219,7 @@
         //functions for converting to rgb
             //split hex code into 3     
             function splithex() {
-                let hex = String(hextextbox.value);
+                let hex = String(hexc);
                 hex1 = hex[1] + hex[2];
                 hex2 = hex[3] + hex[4];
                 hex3 = hex[5] + hex[6];
