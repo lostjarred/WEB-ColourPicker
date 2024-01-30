@@ -174,6 +174,7 @@
                 colourpickertextbox.value = event.target.value;
                 splithex();
                 convertrgb();
+                updatetextboxes()
             }
             //colour pick textbox
             function watchcolourpickertextbox(event) {
@@ -182,6 +183,7 @@
                 colourpicker.value = event.target.value;
                 splithex();
                 convertrgb();
+                updatetextboxes()
             }
 
         //function for updating on page load
@@ -190,22 +192,23 @@
                 colourpickerdiv.style.background = document.querySelector("#colourpicker").value;
                 splithex();
                 convertrgb();
+                updatetextboxes()
             }
+        //function to update textboxes
+        function updatetextboxes() {
+            hex1text.value = hex1
+            hex2text.value = hex2;
+            hex3text.value = hex3;
+        }
         pageloadcolourpicker();
 
         //functions for converting to rgb
             //split hex code into 3     
             function splithex() {
                 let hex = String(hextextbox.value);
-                
                 hex1 = hex[1] + hex[2];
-                hex1text.value = hex1
-                
-                hex2 = hex[3] + hex[4]
-                hex2text.value = hex2;
-
-                hex3 = hex[5] + hex[6]
-                hex3text.value = hex3;
+                hex2 = hex[3] + hex[4];
+                hex3 = hex[5] + hex[6];
             }
             //convert hex to int RGB
             function convertrgb() {
