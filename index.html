@@ -102,7 +102,7 @@
                     </div> 
                     
                     <div class="row">
-                        <p> <input type="text" id="hextextarea" size="7" maxlength="7" readonly> </p>
+                        <p id="hextextarea" class="textbox"></p>
                     </div>
                 </div>
                 <div class="wrapper">
@@ -205,7 +205,7 @@
         //function to update textboxes
         function updatetextboxes() {
             //hex
-                hextextbox.value = hexc;
+                hextextbox.innerHTML = hexc;
                 hex1text.innerHTML = hex1
                 hex2text.innerHTML = hex2;
                 hex3text.innerHTML = hex3;
