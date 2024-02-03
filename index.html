@@ -72,16 +72,17 @@
         </style>
     </head>
     <body>
-        <div class="wrapper col" style="margin-left: 5%; margin-right: 5%; border-left: 2px dashed #FFB000; border-right: 2px dashed #FFB000; background-color: rgba(204, 139, 0, 0.5)">
+        <div class="col" style="margin-left: 5%; margin-right: 5%; border-left: 2px dashed #FFB000; border-right: 2px dashed #FFB000; background-color: rgba(204, 139, 0, 0.5)">
             <div style="border-top: 2px dashed #FFB000;">
                 <h1 style="text-align: center;" class="header">== Colour Picker ==</h1>
             </div>
-            <div style="border-top: 2px dashed #FFB000;">
-                <div id="colourpickerdiv" style="padding: 10%; border: 2px solid #FFB000;">&nbsp</div>
-                
-                <div class="wrapper">
+            <div class="col" style="border-top: 2px dashed #FFB000;">
+                <div id="colourpickerdiv" style="padding: 10%; border: 2px solid #FFB000;">
+                    &nbsp
+                </div>
+                <div class ="row">   
                     <div class="row" style="padding-right: 1%; padding-left: 1%;">
-                        <p>Select colour</p>
+                        <p>Select colour</p>   
                     </div>
                     <div class="row" style="padding-right: 1%; ">
                         <p> <input type="color" id="colourpicker" value="#ffffff"> </p>
@@ -89,52 +90,29 @@
                     <div class="row" style="padding-right: 1%; ">
                         <p> <input id="colourpickertextbox" value="#ffffff" size="7" maxlength="7"> </p>
                     </div>
-                </div>
+                </div> 
             </div>
-            <div class="wrapper col" style="border-top: 2px dashed #FFB000; border-bottom: 2px dashed #FFB000; padding-left: 1%;">
-                <div class="wrapper">
+            <div class="col" style="border-top: 2px dashed #FFB000; border-bottom: 2px dashed #FFB000; padding-left: 1%;">
+                <div class="col">
                     <h2>Hex Colour</h2>
-                </div>
-                <div class="wrapper">
                     <div class="row">
                         <p>Hex:&nbsp</p>
-                    </div> 
-                    
-                    <div class="row">
                         <p id="hextextarea" class="textbox"></p>
-                    </div>
-                </div>
-                <div class="wrapper">
+                    </div> 
                     <div class="row">
                         <p id="hex1" class="textbox"></p>
-                    </div>
-                    <div class="row">
                         <p id="hex2" class="textbox"></p>
-                    </div>
-                    <div class="row">
                         <p id="hex3" class="textbox"></p>
                     </div>
                 </div>
-                <div class="wrapper">
+                <div class="col">
                     <h2>RGB Colour</h2>
-                </div>
-                <div class="wrapper">
                     <div class="row">
                         <p>Red:&nbsp</p>
-                    </div>
-                    <div class="row">
                         <p id="intr" class="textbox"></p>
-                    </div>
-                    <div class="row">
                         <p>Green:&nbsp</p>
-                    </div>
-                    <div class="row">
                         <p id="intg" class="textbox"></p>
-                    </div>
-                    <div class="row">
                         <p>Blue:&nbsp</p>
-                    </div>
-                    <div class="row">
                         <p id="intb" class="textbox"></p>
                     </div>
                 </div>
