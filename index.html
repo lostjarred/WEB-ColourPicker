@@ -28,6 +28,12 @@
                 border: 1px solid #FFB000;
                 padding: 2px;
             }
+            .border-top {
+                border-top: 2px dashed #FFB000;
+            }
+            .border-bottom {
+                border-bottom: 2px dashed #FFB000;
+            }
             #maindiv{
                 margin-left: 5%; 
                 margin-right: 5%; 
@@ -79,11 +85,11 @@
         </style>
     </head>
     <body>
-        <div id="maindiv" class="col" style="">
-            <div style="border-top: 2px dashed #FFB000;">
+        <div id="maindiv" class="col">
+            <div class="border-top">
                 <h1 style="text-align: center;" class="header">== Colour Picker ==</h1>
             </div>
-            <div class="col" style="border-top: 2px dashed #FFB000;">
+            <div class="col border-top">
                 <div id="colourpickerdiv" style="padding: 10%; border: 2px solid #FFB000;">
                     &nbsp
                 </div>
@@ -99,7 +105,7 @@
                     </div>
                 </div> 
             </div>
-            <div class="col" style="border-top: 2px dashed #FFB000; border-bottom: 2px dashed #FFB000; padding-left: 1%;">
+            <div class="col border-top border-bottom" style="padding-left: 1%;">
                 <div class="col">
                     <h2>Hex Colour</h2>
                     <div class="row">
