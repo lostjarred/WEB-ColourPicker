@@ -113,7 +113,7 @@
                         <p id="hextextarea" class="textbox"></p>
                     </div> 
                     <div class="row">
-                        <p id="hex1" class="textbox"></p>
+                        <p id="hexred" class="textbox"></p>
                         <p id="hex2" class="textbox"></p>
                         <p id="hex3" class="textbox"></p>
                     </div>
@@ -139,7 +139,7 @@
             const colourpicker = document.querySelector("#colourpicker");
             const colourpickertextbox = document.querySelector("#colourpickertextbox");
 
-            const hex1text = document.querySelector("#hex1");
+            const hexredtext = document.querySelector("#hexred");
             const hex2text = document.querySelector("#hex2");
             const hex3text = document.querySelector("#hex3");
 
@@ -149,7 +149,7 @@
         //variables for values
             //hex
             let hexc = 0;
-            let hex1 = 0;
+            let hexred = 0;
             let hex2 = 0;
             let hex3 = 0;
             //rgb
@@ -196,7 +196,7 @@
         function updatetextboxes() {
             //hex
                 hextextbox.innerHTML = hexc;
-                hex1text.innerHTML = hex1
+                hexredtext.innerHTML = hexred
                 hex2text.innerHTML = hex2;
                 hex3text.innerHTML = hex3;
             //rgb
@@ -210,13 +210,13 @@
             //split hex code into 3     
             function splithex() {
                 let hex = String(hexc);
-                hex1 = hex[1] + hex[2];
+                hexred = hex[1] + hex[2];
                 hex2 = hex[3] + hex[4];
                 hex3 = hex[5] + hex[6];
             }
             //convert hex to int RGB
             function convertrgb() {
-                redint = parseInt(hex1, 16);
+                redint = parseInt(hexred, 16);
                 blueint = parseInt(hex3, 16);
                 greenint = parseInt(hex2, 16);
             }
