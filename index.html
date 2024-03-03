@@ -165,10 +165,7 @@
             const intgtext = document.querySelector("#intg");
         //variables for values
             //hex
-            let hexc = 0;
-            let hexred = 0;
-            let hexgreen = 0;
-            let hex3 = 0;
+            const hexcolour = {colour:'0', red:'0', green:'0', blue:'0'}
             //rgb
             const rgbint = {red:'0', blue:'0', green:'0'}
         //watch for events
@@ -182,7 +179,7 @@
         //event functions
             //colour picker 
             function watchcolourpicker(event) {
-                hexc = event.target.value;
+                hexcolour.colour = event.target.value;
                 colourpickerdiv.style.background = event.target.value;
                 colourpickertextbox.value = event.target.value;
                 splithex();
@@ -191,7 +188,7 @@
             }
             //colour pick textbox
             function watchcolourpickertextbox(event) {
-                hexc = event.target.value;
+                hexcolour.colour = event.target.value;
                 colourpickerdiv.style.background = event.target.value;
                 colourpicker.value = event.target.value;
                 splithex();
@@ -201,7 +198,7 @@
 
         //function for updating on page load
             function pageloadcolourpicker() {
-                hexc = document.querySelector("#colourpicker").value;
+                hexcolour.colour = document.querySelector("#colourpicker").value;
                 colourpickerdiv.style.background = document.querySelector("#colourpicker").value;
                 splithex();
                 convertrgb();
@@ -210,10 +207,10 @@
         //function to update textboxes
         function updatetextboxes() {
             //hex
-                hextextbox.innerHTML = hexc;
-                hexredtext.innerHTML = hexred
-                hexgreentext.innerHTML = hexgreen;
-                hexblue.innerHTML = hex3;
+                hextextbox.innerHTML = hexcolour.colour;
+                hexredtext.innerHTML = hexcolour.red
+                hexgreentext.innerHTML = hexcolour.green;
+                hexblue.innerHTML = hexcolour.blue;
             //rgb
                 intrtext.innerHTML = rgbint.red;
                 intbtext.innerHTML = rgbint.blue;
@@ -224,16 +221,16 @@
         //functions for converting to rgb
             //split hex code into 3     
             function splithex() {
-                let hex = String(hexc);
-                hexred = hex[1] + hex[2];
-                hexgreen = hex[3] + hex[4];
-                hex3 = hex[5] + hex[6];
+                let hex = String(hexcolour.colour);
+                hexcolour.red = hex[1] + hex[2];
+                hexcolour.green = hex[3] + hex[4];
+                hexcolour.blue = hex[5] + hex[6];
             }
             //convert hex to int RGB
             function convertrgb() {
-                rgbint.red = parseInt(hexred, 16);
-                rgbint.blue = parseInt(hex3, 16);
-                rgbint.green = parseInt(hexgreen, 16);
+                rgbint.red = parseInt(hexcolour.red, 16);
+                rgbint.blue = parseInt(hexcolour.blue, 16);
+                rgbint.green = parseInt(hexcolour.green, 16);
             }
     </script>
 </html>
