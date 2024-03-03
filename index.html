@@ -156,9 +156,11 @@
             const colourpicker = document.querySelector("#colourpicker");
             const colourpickertextbox = document.querySelector("#colourpickertextbox");
 
-            const hexredtext = document.querySelector("#hexredtb");
-            const hexgreentext = document.querySelector("#hexgreentb");
-            const hexblue = document.querySelector("#hexbluetb");
+            const hextb = {
+                red:document.querySelector("#hexredtb"), 
+                blue:document.querySelector("#hexbluetb"), 
+                green:document.querySelector("#hexgreentb")
+            };
 
             const intrtext = document.querySelector("#intr");
             const intbtext = document.querySelector("#intb");
@@ -208,9 +210,9 @@
             function updatetextboxes() {
                 //hex
                     hextextbox.innerHTML = hexcolour.colour;
-                    hexredtext.innerHTML = hexcolour.red
-                    hexgreentext.innerHTML = hexcolour.green;
-                    hexblue.innerHTML = hexcolour.blue;
+                    hextb.red.innerHTML = hexcolour.red
+                    hextb.green.innerHTML = hexcolour.green;
+                    hextb.blue.innerHTML = hexcolour.blue;
                 //rgb
                     intrtext.innerHTML = rgbint.red;
                     intbtext.innerHTML = rgbint.blue;
