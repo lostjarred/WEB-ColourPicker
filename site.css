@@ -8,7 +8,6 @@ p, h1, h2, h3 {
 input {
     color: #FFCC00;
     font-family: UnnamedDOSFontIV;
-    background-color: rgba(204, 139, 0, 0.5);
     text-align: center;
 }
 .row {
@@ -28,7 +27,6 @@ input {
     animation-direction: alternate;
 }
 .textbox {
-    background-color: rgba(204, 139, 0, 0.5);
     text-align: center;
     border: 1px solid #FFB000;
 }
@@ -41,7 +39,6 @@ input {
 #maindiv{
     border-left: 2px dashed #FFB000; 
     border-right: 2px dashed #FFB000; 
-    background-color: rgba(204, 139, 0, 0.5)
 }
 #colourpickerdiv{
     padding: 8%; 
