@@ -21,6 +21,7 @@ input {
 .textbox {
     text-align: center;
     border: 1px solid #FFB000;
+    padding: 5px;
 }
 .border-top {
     border-top: 2px dashed #FFB000;
