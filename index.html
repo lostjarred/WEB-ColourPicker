@@ -6,7 +6,6 @@
             .row {
                 display: flex;
                 flex-direction: row;
-                margin-left: 1%;
             }
             .col {
                 display: flex;
@@ -72,6 +71,9 @@
                 #colourpickerdiv{
                     margin: 2%;
                 }
+                .row {
+                    margin-left: 1%;
+                }
             }
         </style>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -98,15 +100,15 @@
                         <p>RGB</p>
                         <div class="row">
                             <p>Red:</p>
-                            <input type="number" id="rgbinputred" max="255" min="0" value="0" size="6">
+                            <input type="number" id="rgbinputred" max="255" min="0" value="0" size="5">
                         </div>
                         <div class="row">
                             <p>Green:</p>
-                            <input type="number" id="rgbinputgreen" max="255" min="0" value="0" size="6">
+                            <input type="number" id="rgbinputgreen" max="255" min="0" value="0" size="5">
                         </div>
                         <div class="row">
                             <p>Blue:</p>
-                            <input type="number" id="rgbinputblue" max="255" min="0" value="0" size="6">
+                            <input type="number" id="rgbinputblue" max="255" min="0" value="0" size="5">
                         </div>
                     </div>
                     <div class="row">
