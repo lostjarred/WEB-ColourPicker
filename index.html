@@ -154,6 +154,15 @@
                         <p>Blue:&nbsp</p>
                         <p id="intb" class="textbox"></p>
                     </div>
+                    <div class="row">
+                        <h3>CSS</h3>
+                    </div>
+                    <div class="row">
+                        <p id="rgbcssoutput" class="textbox"></p>
+                    </div>
+                    <div class="row">
+                        <p id="rgbacssoutput" class="textbox"></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,7 +177,9 @@
             
             //css outputs
                 const csstextbox = {
-                    hex: document.querySelector("#hexcssoutput")
+                    hex: document.querySelector("#hexcssoutput"),
+                    rgb: document.querySelector("#rgbcssoutput"),
+                    rgba: document.querySelector("#rgbacssoutput")
                 }
             //RGB input 
                 const inputrgb = {
@@ -252,6 +263,8 @@
         //function to update css textboxes 
             function updatecsstextboxes() {
                 csstextbox.hex.innerHTML = 'color: '+ hexcolour.colour +';'
+                csstextbox.rgb.innerHTML = 'color: rgb('+rgbint.red + ', ' + rgbint.green + ', ' + rgbint.blue+');'
+                csstextbox.rgba.innerHTML = 'color: rgba('+rgbint.red + ', ' + rgbint.green + ', ' + rgbint.blue+' ,0);'
             }
         //function to check if valid
             function coloursanitycheck() {
