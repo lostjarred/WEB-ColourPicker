@@ -286,7 +286,6 @@
                 function combinehex() {
                     let hex = String(hexcolour.red + hexcolour.green + hexcolour.blue);
                     hexcolour.colour = '#' + hex;
-                    console.log('hex ' + hexcolour.colour)
                 }
             
             //convert hex to int RGB
@@ -298,14 +297,17 @@
 
             //convert rgb to hex
                 function convertrgbhex() {
-                    hexcolour.red = rgbint.red.toString(16);
-                    hexcolour.blue = rgbint.blue.toString(16);
-                    hexcolour.green = rgbint.green.toString(16);
-                    console.log('red ' + hexcolour.red)
-                    console.log('green ' +hexcolour.green)
-                    console.log('blue ' + hexcolour.blue)      
+                    hexcolour.red = lengthcheck( rgbint.red.toString(16) );
+                    hexcolour.blue = lengthcheck( rgbint.blue.toString(16) );
+                    hexcolour.green = lengthcheck( rgbint.green.toString(16) );     
                 }
-
-            pageloadcolourpicker();
+            //function to check for less then 2 chars and add if necessary
+                function lengthcheck(input) {
+                    if (input.toString().length < 2) {
+                        input = '0' + input;
+                    }
+                    return String(input);
+                }
+            pageloadcolourpicker(); 
     </script>
 </html>
