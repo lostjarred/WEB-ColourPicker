@@ -170,9 +170,7 @@
             let hexgreen = 0;
             let hex3 = 0;
             //rgb
-            let redint = 0;
-            let blueint = 0;
-            let greenint = 0;
+            const rgbint = {red:'0', blue:'0', green:'0'}
         //watch for events
             //colour picker input
             colourpicker.addEventListener("change", watchcolourpicker, false);
@@ -217,9 +215,9 @@
                 hexgreentext.innerHTML = hexgreen;
                 hexblue.innerHTML = hex3;
             //rgb
-                intrtext.innerHTML = redint;
-                intbtext.innerHTML = blueint;
-                intgtext.innerHTML = greenint;
+                intrtext.innerHTML = rgbint.red;
+                intbtext.innerHTML = rgbint.blue;
+                intgtext.innerHTML = rgbint.green;
         }
         pageloadcolourpicker();
 
@@ -233,9 +231,9 @@
             }
             //convert hex to int RGB
             function convertrgb() {
-                redint = parseInt(hexred, 16);
-                blueint = parseInt(hex3, 16);
-                greenint = parseInt(hexgreen, 16);
+                rgbint.red = parseInt(hexred, 16);
+                rgbint.blue = parseInt(hex3, 16);
+                rgbint.green = parseInt(hexgreen, 16);
             }
     </script>
 </html>
