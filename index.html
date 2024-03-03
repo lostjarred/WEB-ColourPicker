@@ -162,9 +162,11 @@
                 green:document.querySelector("#hexgreentb")
             };
 
-            const intrtext = document.querySelector("#intr");
-            const intbtext = document.querySelector("#intb");
-            const intgtext = document.querySelector("#intg");
+            const rgbtb = {
+                red:document.querySelector("#intr"),
+                blue:document.querySelector("#intb"),
+                green:document.querySelector("#intg")
+            }
         //variables for values
             //hex
             const hexcolour = {colour:'0', red:'0', green:'0', blue:'0'}
@@ -214,9 +216,9 @@
                     hextb.green.innerHTML = hexcolour.green;
                     hextb.blue.innerHTML = hexcolour.blue;
                 //rgb
-                    intrtext.innerHTML = rgbint.red;
-                    intbtext.innerHTML = rgbint.blue;
-                    intgtext.innerHTML = rgbint.green;
+                    rgbtb.red.innerHTML = rgbint.red;
+                    rgbtb.blue.innerHTML = rgbint.blue;
+                    rgbtb.green.innerHTML = rgbint.green;
             }
         
         //functions for converting to rgb
