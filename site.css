@@ -33,12 +33,8 @@ input {
     border-bottom: 2px dashed #FFB000;
 }
 #header {
-    color: rgba(255, 176, 0, 0.1);
+    color: rgba(255, 176, 0);
     text-align: center;
-    animation-name: FADEIN;
-    animation-duration: 800ms;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 #maindiv{
     border-left: 2px solid #FFB000; 
@@ -49,10 +45,6 @@ input {
     border: 2px solid #FFB000; 
 }
 
-@keyframes FADEIN {
-    0% {color: rgba(255, 176, 0, 0.1);}
-    100% {color: rgba(255, 176, 0, 1);}
-}
 @font-face {
     font-family: 'UnnamedDOSFontIV';
     src: url('./font/UnnamedDOSFontIV.ttf') format('truetype');
