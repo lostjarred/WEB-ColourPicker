@@ -185,12 +185,18 @@
             const rgbint = {red:'0', blue:'0', green:'0'}
         //watch for events
             //colour picker input
-            colourpicker.addEventListener("change", watchcolourpicker, false);
-            colourpicker.addEventListener("input", watchcolourpicker, false);
+                colourpicker.addEventListener("change", watchcolourpicker, false);
+                colourpicker.addEventListener("input", watchcolourpicker, false);
             
             //textbox input
-            colourpickertextbox.addEventListener("change", watchcolourpickertextbox, false);
-            colourpickertextbox.addEventListener("input", watchcolourpickertextbox, false);
+                colourpickertextbox.addEventListener("change", watchcolourpickertextbox, false);
+                colourpickertextbox.addEventListener("input", watchcolourpickertextbox, false);
+            
+            //rgb input 
+                inputrgb.red.addEventListener("change", watchrgbinputs, false);
+                inputrgb.blue.addEventListener("change", watchrgbinputs, false);
+                inputrgb.green.addEventListener("change", watchrgbinputs, false);
+
         //event functions
             
             //colour picker 
@@ -201,6 +207,15 @@
             //colour pick textbox
                 function watchcolourpickertextbox(event) {
                     hexcolour.colour = event.target.value;
+                    colourpickermain();
+                }
+            //rgb inputs 
+                function watchrgbinputs(event) {
+                    rgbint.red = parseInt(inputrgb.red.value);
+                    rgbint.green = parseInt(inputrgb.green.value);
+                    rgbint.blue = parseInt(inputrgb.blue.value);
+                    convertrgbhex();
+                    combinehex();
                     colourpickermain();
                 }
         //main function to simplify other functions
@@ -261,18 +276,35 @@
         
         //functions for converting to rgb
             //split hex code into 3     
-            function splithex() {
-                let hex = String(hexcolour.colour);
-                hexcolour.red = hex[1] + hex[2];
-                hexcolour.green = hex[3] + hex[4];
-                hexcolour.blue = hex[5] + hex[6];
-            }
+                function splithex() {
+                    let hex = String(hexcolour.colour);
+                    hexcolour.red = hex[1] + hex[2];
+                    hexcolour.green = hex[3] + hex[4];
+                    hexcolour.blue = hex[5] + hex[6];
+                }
+
+                function combinehex() {
+                    let hex = String(hexcolour.red + hexcolour.green + hexcolour.blue);
+                    hexcolour.colour = '#' + hex;
+                    console.log('hex ' + hexcolour.colour)
+                }
+            
             //convert hex to int RGB
-            function convertrgb() {
-                rgbint.red = parseInt(hexcolour.red, 16);
-                rgbint.blue = parseInt(hexcolour.blue, 16);
-                rgbint.green = parseInt(hexcolour.green, 16);
-            }
+                function convertrgb() {
+                    rgbint.red = parseInt(hexcolour.red, 16);
+                    rgbint.blue = parseInt(hexcolour.blue, 16);
+                    rgbint.green = parseInt(hexcolour.green, 16);
+                }
+
+            //convert rgb to hex
+                function convertrgbhex() {
+                    hexcolour.red = rgbint.red.toString(16);
+                    hexcolour.blue = rgbint.blue.toString(16);
+                    hexcolour.green = rgbint.green.toString(16);
+                    console.log('red ' + hexcolour.red)
+                    console.log('green ' +hexcolour.green)
+                    console.log('blue ' + hexcolour.blue)      
+                }
 
             pageloadcolourpicker();
     </script>
