@@ -196,27 +196,30 @@
             //colour picker 
                 function watchcolourpicker(event) {
                     hexcolour.colour = event.target.value;
-                    splithex();
-                    convertrgb();
-                    if ( coloursanitycheck() ) {
-                        colourpickerdiv.style.background = event.target.value;
-                        colourpickertextbox.value = event.target.value;
-                        updatetextboxes()
-                        colourpickerinfooutput.innerHTML='VALID COlOUR'
-                    }
+                    colourpickermain();
                 }
             //colour pick textbox
                 function watchcolourpickertextbox(event) {
                     hexcolour.colour = event.target.value;
-                    splithex();
-                    convertrgb();
-                    if ( coloursanitycheck() ) {
-                        colourpickerdiv.style.background = event.target.value;
-                        colourpicker.value = event.target.value;
-                        updatetextboxes()
-                        colourpickerinfooutput.innerHTML='VALID COlOUR'
-                    }
+                    colourpickermain();
                 }
+        //main function to simplify other functions
+            function colourpickermain() {
+                splithex();
+                convertrgb();
+                if ( coloursanitycheck() ) {
+                    colourpickerdiv.style.background = hexcolour.colour;
+                    colourpicker.value = hexcolour.colour;
+                    updatetextboxes()
+                    colourpickerinfooutput.innerHTML='VALID COlOUR'
+                    updateotherinputs();
+                }
+            }
+            //function to update other inputs
+            function updateotherinputs() {
+                colourpickertextbox.value = hexcolour.colour;
+                colourpicker.value = hexcolour.colour;
+            }
         //function to check if valid
             function coloursanitycheck() {
                 let check = true;
@@ -238,13 +241,7 @@
         //function for updating on page load
             function pageloadcolourpicker() {
                 hexcolour.colour = document.querySelector("#colourpicker").value;
-                splithex();
-                convertrgb();
-                if ( coloursanitycheck() ) {
-                    colourpickerdiv.style.background = document.querySelector("#colourpicker").value;
-                    updatetextboxes()
-                    colourpickerinfooutput.innerHTML='VALID COlOUR'
-                }
+                colourpickermain();
             }
         //function to update textboxes
             function updatetextboxes() {
