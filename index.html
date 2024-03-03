@@ -178,23 +178,23 @@
             colourpickertextbox.addEventListener("input", watchcolourpickertextbox, false);
         //event functions
             //colour picker 
-            function watchcolourpicker(event) {
-                hexcolour.colour = event.target.value;
-                colourpickerdiv.style.background = event.target.value;
-                colourpickertextbox.value = event.target.value;
-                splithex();
-                convertrgb();
-                updatetextboxes()
-            }
+                function watchcolourpicker(event) {
+                    hexcolour.colour = event.target.value;
+                    colourpickerdiv.style.background = event.target.value;
+                    colourpickertextbox.value = event.target.value;
+                    splithex();
+                    convertrgb();
+                    updatetextboxes()
+                }
             //colour pick textbox
-            function watchcolourpickertextbox(event) {
-                hexcolour.colour = event.target.value;
-                colourpickerdiv.style.background = event.target.value;
-                colourpicker.value = event.target.value;
-                splithex();
-                convertrgb();
-                updatetextboxes()
-            }
+                function watchcolourpickertextbox(event) {
+                    hexcolour.colour = event.target.value;
+                    colourpickerdiv.style.background = event.target.value;
+                    colourpicker.value = event.target.value;
+                    splithex();
+                    convertrgb();
+                    updatetextboxes()
+                }
 
         //function for updating on page load
             function pageloadcolourpicker() {
@@ -205,19 +205,18 @@
                 updatetextboxes()
             }
         //function to update textboxes
-        function updatetextboxes() {
-            //hex
-                hextextbox.innerHTML = hexcolour.colour;
-                hexredtext.innerHTML = hexcolour.red
-                hexgreentext.innerHTML = hexcolour.green;
-                hexblue.innerHTML = hexcolour.blue;
-            //rgb
-                intrtext.innerHTML = rgbint.red;
-                intbtext.innerHTML = rgbint.blue;
-                intgtext.innerHTML = rgbint.green;
-        }
-        pageloadcolourpicker();
-
+            function updatetextboxes() {
+                //hex
+                    hextextbox.innerHTML = hexcolour.colour;
+                    hexredtext.innerHTML = hexcolour.red
+                    hexgreentext.innerHTML = hexcolour.green;
+                    hexblue.innerHTML = hexcolour.blue;
+                //rgb
+                    intrtext.innerHTML = rgbint.red;
+                    intbtext.innerHTML = rgbint.blue;
+                    intgtext.innerHTML = rgbint.green;
+            }
+        
         //functions for converting to rgb
             //split hex code into 3     
             function splithex() {
@@ -232,5 +231,7 @@
                 rgbint.blue = parseInt(hexcolour.blue, 16);
                 rgbint.green = parseInt(hexcolour.green, 16);
             }
+
+            pageloadcolourpicker();
     </script>
 </html>
