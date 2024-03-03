@@ -37,8 +37,8 @@ input {
     animation-direction: alternate;
 }
 #maindiv{
-    border-left: 2px dashed #FFB000; 
-    border-right: 2px dashed #FFB000; 
+    border-left: 2px solid #FFB000; 
+    border-right: 2px solid #FFB000; 
 }
 #colourpickerdiv{
     padding: 8%; 
