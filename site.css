@@ -1,3 +1,16 @@
+body {
+    background-color: #282828;
+}
+p, h1, h2, h3 {
+    color: #FFCC00;
+    font-family: UnnamedDOSFontIV;
+}
+input {
+    color: #FFCC00;
+    font-family: UnnamedDOSFontIV;
+    background-color: rgba(204, 139, 0, 0.5);
+    text-align: center;
+}
 .row {
     display: flex;
     flex-direction: row;
@@ -34,19 +47,7 @@
     padding: 8%; 
     border: 2px solid #FFB000; 
 }
-body {
-    background-color: #282828;
-}
-p, h1, h2, h3 {
-    color: #FFCC00;
-    font-family: UnnamedDOSFontIV;
-}
-input {
-    color: #FFCC00;
-    font-family: UnnamedDOSFontIV;
-    background-color: rgba(204, 139, 0, 0.5);
-    text-align: center;
-}
+
 @keyframes FADEIN {
     0% {color: rgba(255, 176, 0, 0.1);}
     100% {color: rgba(255, 176, 0, 1);}
