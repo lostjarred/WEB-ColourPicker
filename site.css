@@ -6,9 +6,10 @@ p, h1, h2, h3 {
     font-family: UnnamedDOSFontIV;
 }
 input {
-    color: #FFCC00;
+    color: #282828;
     font-family: UnnamedDOSFontIV;
     text-align: center;
+    background-color: #FFCC00;
 }
 .row {
     display: flex;
