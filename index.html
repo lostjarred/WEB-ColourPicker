@@ -109,6 +109,9 @@
                             <input type="number" id="rgbinputblue" max="255" min="0" value="0" size="6">
                         </div>
                     </div>
+                    <div class="row">
+                        <p id="colpickoutput">VALID COLOUR</p>
+                    </div>
                 </div> 
             </div>
             <div class="col border-top border-bottom">
@@ -155,6 +158,7 @@
             const colourpickerdiv = document.querySelector("#colourpickerdiv");
             const colourpicker = document.querySelector("#colourpicker");
             const colourpickertextbox = document.querySelector("#colourpickertextbox");
+            const colourpickerinfooutput = document.querySelector("#colpickoutput");
             
             //hex text box elements
                 const hextb = {
@@ -182,32 +186,59 @@
             colourpickertextbox.addEventListener("change", watchcolourpickertextbox, false);
             colourpickertextbox.addEventListener("input", watchcolourpickertextbox, false);
         //event functions
+            
             //colour picker 
                 function watchcolourpicker(event) {
                     hexcolour.colour = event.target.value;
-                    colourpickerdiv.style.background = event.target.value;
-                    colourpickertextbox.value = event.target.value;
                     splithex();
                     convertrgb();
-                    updatetextboxes()
+                    if ( coloursanitycheck() ) {
+                        colourpickerdiv.style.background = event.target.value;
+                        colourpickertextbox.value = event.target.value;
+                        updatetextboxes()
+                        colourpickerinfooutput.innerHTML='VALID COlOUR'
+                    }
                 }
             //colour pick textbox
                 function watchcolourpickertextbox(event) {
                     hexcolour.colour = event.target.value;
-                    colourpickerdiv.style.background = event.target.value;
-                    colourpicker.value = event.target.value;
                     splithex();
                     convertrgb();
-                    updatetextboxes()
+                    if ( coloursanitycheck() ) {
+                        colourpickerdiv.style.background = event.target.value;
+                        colourpicker.value = event.target.value;
+                        updatetextboxes()
+                        colourpickerinfooutput.innerHTML='VALID COlOUR'
+                    }
                 }
+        //function to check if valid
+            function coloursanitycheck() {
+                let check = true;
+                if (rgbint.red > 255 || isNaN(rgbint.red)) {
+                    check = false;
+                    colourpickerinfooutput.innerHTML='INVALID COlOUR'
+                }
+                if (rgbint.blue > 255 || isNaN(rgbint.blue)) {
+                    check = false;
+                    colourpickerinfooutput.innerHTML='INVALID COlOUR'
+                }
+                if (rgbint.green > 255 || isNaN(rgbint.green)) {
+                    check = false;
+                    colourpickerinfooutput.innerHTML='INVALID COlOUR'
+                }
+                return check;
+            } 
 
         //function for updating on page load
             function pageloadcolourpicker() {
                 hexcolour.colour = document.querySelector("#colourpicker").value;
-                colourpickerdiv.style.background = document.querySelector("#colourpicker").value;
                 splithex();
                 convertrgb();
-                updatetextboxes()
+                if ( coloursanitycheck() ) {
+                    colourpickerdiv.style.background = document.querySelector("#colourpicker").value;
+                    updatetextboxes()
+                    colourpickerinfooutput.innerHTML='VALID COlOUR'
+                }
             }
         //function to update textboxes
             function updatetextboxes() {
